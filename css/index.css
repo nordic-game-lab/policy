@@ -195,3 +195,7 @@ a:focus {
 .navbar-toggle:active {
     outline: 0;
 }
+
+.van {
+  background-color: #00;
+}
