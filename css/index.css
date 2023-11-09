@@ -1,3 +1,17 @@
+:root {
+    --color-bg: #000000;
+    --color-fg: #ffffff;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+    }
+  }
+  
+
+
 a,.tp-caption a.btn:hover {
   color: #67b0d1;
 }
@@ -42,8 +56,8 @@ body {
     height: 100%;
     font-family: 'Lato',sans-serif;
 	font-weight: 300;
-    color: #666;
-    background-color: #fff;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
 }
 
 html {
@@ -197,5 +211,5 @@ a:focus {
 }
 
 #van {
-  background-color: #00;
+  background-color: #0000;
 }
