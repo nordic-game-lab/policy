@@ -3,7 +3,7 @@
     --color-fg: #ffffff;
   }
   
-  @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
     :root {
       --color-bg: #ffffff;
       --color-fg: #000000;
