@@ -62,10 +62,9 @@
         function setOptOutCookie(optedOut) {
             const date = new Date();
             date.setFullYear(date.getFullYear() + 3); // 3 years validity
-            const expires = "; expires=" + date.toUTCString();
+            const expires = "; Max-Age=" + 365 * 24 * 60 * 60 * 3;
             const value = optedOut ? "true" : "false";
             const cookie = "optOutCookie=" + value + expires + "; domain=*.nordicgamelab.org; path=/; Secure; SameSite=Lax";
-            console.log(cookie);
             document.cookie = cookie;
         }
 
