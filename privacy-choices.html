@@ -65,6 +65,7 @@
             const expires = "; expires=" + date.toUTCString();
             const value = optedOut ? "true" : "false";
             const cookie = "optOutCookie=" + value + expires + "; domain=*.nordicgamelab.org; path=/; Secure; SameSite=Lax";
+            console.log(cookie);
             document.cookie = cookie;
         }
 
