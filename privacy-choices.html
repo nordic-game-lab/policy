@@ -62,9 +62,9 @@
         function setOptOutCookie(optedOut) {
             const date = new Date();
             date.setFullYear(date.getFullYear() + 3); // 3 years validity
-            const expires = "; Max-Age=" + 365 * 24 * 60 * 60 * 3;
+            const expires = 365 * 24 * 60 * 60 * 3;
             const value = optedOut ? "true" : "false";
-            const cookie = "optOutCookie=" + value + expires + "; domain=*.nordicgamelab.org; path=/; Secure; SameSite=Lax";
+            const cookie = `optOutCookie=${value}; Max-Age=${expires}; Domain=.nordicgamelab.org; Path=/; Secure; SameSite Lax;`;
             document.cookie = cookie;
         }
 
@@ -78,6 +78,20 @@
                 setOptOutCookie(false);
             }
         });
+
+        window.onload = function() {
+          let cookieValue = document.cookie;
+          const statusText = document.getElementById('statusText');
+          const optOutSwitch = document.getElementById('optOutSwitch');
+
+          if (cookieValue.includes('optOutCookie=true')) {
+              statusText.innerText = "You have opted out of targeted advertising.";
+              optOutSwitch.checked = true;
+          } else {
+              statusText.innerText = "You are currently opted in for targeted advertising.";
+              optOutSwitch.checked = false;
+          }
+      }
     </script>
 
    </section> 
